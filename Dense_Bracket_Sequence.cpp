@@ -1,33 +1,18 @@
-#include<bits/stdc++.h>
-#define rep(i,a,b) for(long long int i=a;i<b;i++)
-#define rev_rep(i,a,b) for(long long int i=a;i>b;i--)
-#define mod 1000000007
-#define bpc(x) __builtin_popcount(x) // used to count no of 1 in binary representation
-#define bpcll(x) __builtin_popcountll(x) 
-#define ctz(x) __builtin_ctz(x)  // used to count trailing zeros
-#define ull unsigned long long int
+#include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
 
-//for circular rotation questions, use deque (easy hobe)
-//if a number is perfect square -> (int(sqrt(x))*int(sqrt(x))==x) ? 'Yes' : 'No';
-//gcd(a,b) = gcd(a,a%b) 
-//if a number 'x' is powewr of two, then (x)&(x-1)==0;
-// for vector and array, lower bound is - 
-// auto it = lower_bound(a.begin(),a.end(),element);
-// for set - lower_bound will be -> s.lower_bound(element);
-// for set, it=it+1 will not work... it++ will do the same.
+#define OJ                            \
+    freopen("input.txt", "r", stdin); \
+    freopen("output.txt", "w", stdout);
+#define FIO                           \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);                    \
+    cout.tie(NULL);
 
-
-int main()    
+void solve()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-    ll t;
-    cin>>t;
-    while(t--){
-        ll n,res = INT_MAX;
+    ll n,res = INT_MAX;
         cin>>n;
         string s;
         cin>>s;
@@ -42,11 +27,17 @@ int main()
         }
         rep(i,0,n) res = min(res,n - 2*min(v1[i],v2[i]));
         cout<<res<<"\n";
+}
+
+int main()
+{
+    FIO;
+    //OJ;
+    int t = 1;
+    cin >> t;
+    while (t--)
+    {
+        solve();
     }
-    
-    
-
-
-
     return 0;
 }
