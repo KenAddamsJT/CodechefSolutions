@@ -55,6 +55,7 @@ int main()
         cin >> temp;
         arr.push_back(temp);
     }
+    //fuck this
     //sort(arr.begin(), arr.end(), greater<int>());
     canSum(sum, arr, path, memo);
     for (auto i : path)
